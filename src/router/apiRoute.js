@@ -104,7 +104,7 @@ router.get("/quote-maker", apikeyAndLimitMiddleware, quoteMakerMiddleware, (req,
 		createQuote(res.locals.author, res.locals.quote, res.locals.bg)
 			.then((data) => {
 				fs.writeFileSync(path.join(__dirname, `../public/storage/${random}.jpeg`), data);
-				responseData(res, 200, `https://api-pemalas.herokuapp.com/storage/${random}.jpeg`);
+				responseData(res, 200, `https://yakko-panel.herokuapp.com/storage/${random}.jpeg`);
 			})
 			.catch((er) => {
 				console.log(er);
@@ -114,7 +114,7 @@ router.get("/quote-maker", apikeyAndLimitMiddleware, quoteMakerMiddleware, (req,
 		createQuote(res.locals.author, res.locals.quote)
 			.then((data) => {
 				fs.writeFileSync(path.join(__dirname, `../public/storage/${random}.jpeg`), data);
-				responseData(res, 200, `https://api-pemalas.herokuapp.com/storage/${random}.jpeg`);
+				responseData(res, 200, `https://yakko-panel.herokuapp.com/storage/${random}.jpeg`);
 			})
 			.catch((er) => {
 				console.log(er);
